@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 30%;
+            background-color: skyblue;
+            margin: 8% auto;  
+            padding: 10px ;         
+        }
+        .cal{
+            width: 80%;
+            margin: 2% auto;
+            background-color:black;
+        }
+        #in{
+           padding: 10px 79.5px;
+           text-align: end;
+        }
+        .main input[type="button"]{
+        background-color: rgba(0, 0, 0, 0.052);
+        color: rgb(141, 134, 134);
+        border: none;
+        width: 22%;
+        font-size: 20px;
+        padding: 10px 20px;
+       }   
+         
+    </style>
+</head>
+<body>
+    <div class="main">
+            <div class="cal">
+                <input type="text" placeholder="Enter name" id="in">
+            
+            <div class="no">
+                <input type="button" value="7" onclick="pick(7)">
+                <input type="button" value="8" onclick="pick(8)">
+                <input type="button" value="9" onclick="pick(9)">
+                <input type="button" value="+" onclick="pick('+')">
+            </div>    
+            <div class="no">
+                <input type="button" value="4" onclick="pick(4)">
+                <input type="button" value="5" onclick="pick(5)">
+                <input type="button" value="6" onclick="pick(6)">
+                <input type="button" value="-" onclick="pick('-')">
+            </div>    
+            <div class="no">
+                <input type="button" value="1" onclick="pick(1)">
+                <input type="button" value="2" onclick="pick(2)">
+                <input type="button" value="3" onclick="pick(3)">
+                <input type="button" value="*" onclick="pick('*')">
+            </div> 
+            <div class="no">
+                <input type="button" value="." onclick="pick('.')">
+                <input type="button" value="0" onclick="pick(0)">
+                <input type="button" value="=" onclick="solve()">
+                <input type="button" value="/" onclick="pick('/')">
+            </div>    
+            <div class="no">
+                <input type="button" value="Clear" onclick="clr()">
+                <input type="button" value="(" onclick="pick()">
+                <input type="button" value=")" onclick="pick()">
+                <input type="button" value="%" onclick="pick('%')">
+            </div>       
+        </div>
+    </div>
+    <script>
+       function pick(val){
+            document.getElementById("in").value +=val;
+       }
+       function solve(){
+            var x=document.getElementById("in").value;
+            var y=eval(x);
+            document.getElementById("in").value=y;
+        }
+        function clr(){
+            document.getElementById("in").value="";
+       }
+    </script>
+</body>
+</html>
